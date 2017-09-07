@@ -27,4 +27,5 @@ tags:
 
 以后不会忘记都做过些什么。
 
-![avatar](http://ouim3dnf4.bkt.clouddn.com/17-9-7/4189635.jpg)
+<img src="http://ouim3dnf4.bkt.clouddn.com/17-9-7/4189635.jpg" style="border: none"/>
+
