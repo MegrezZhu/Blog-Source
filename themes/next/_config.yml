@@ -5,6 +5,9 @@
 # Put your favicon.ico into `hexo-site/source/` directory.
 favicon: /favicon.ico
 
+# establish date
+since: 2017
+
 # Set default keywords (Use a comma to separate)
 keywords: "Hexo, NexT"
 
@@ -90,8 +93,11 @@ scheme: Gemini
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
-#social:
+social:
   #LinkLabel: Link
+  GitHub: https://github.com/MegrezZhu
+  知乎: http://www.zhihu.com/people/zhu-chu-48
+  Weibo: http://www.weibo.com/i490815101
 
 # Social Links Icons
 # Icon Mapping:
