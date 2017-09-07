@@ -5,9 +5,9 @@
 # Site
 title: Megrez
 subtitle: Everything is for DOPAMINE
-description:  wow...
+description: Everything is for DOPAMINE
 author: Zhu Chu
-language:
+language: zh-Hans
 timezone:
 
 # URL
@@ -72,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: anatole
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
