@@ -80,3 +80,4 @@ deploy:
   type: git
   repo: git@github.com:MegrezZhu/MegrezZhu.github.io.git
   branch: master
+  message: hexo-auto-deploy
