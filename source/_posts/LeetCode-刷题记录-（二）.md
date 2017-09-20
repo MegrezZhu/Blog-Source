@@ -64,7 +64,7 @@ public:
         res.resize(s.size());
         calculated.resize(s.size());
         for (int i = 0; i < s.size(); i++) {
-                         // 初始化
+            // 初始化
             res[i].clear();
             res[i].resize(p.size(), false);
             calculated[i].clear();
