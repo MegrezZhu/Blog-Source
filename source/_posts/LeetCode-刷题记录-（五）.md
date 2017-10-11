@@ -2,7 +2,7 @@
 title: LeetCode 刷题记录 （五）
 date: 2017-10-11 14:38:47
 tags:
-    - LeetCode
+        - LeetCode
 ---
 
 # Dungeon Game
@@ -30,21 +30,21 @@ $$
 ```c++
 class Solution {
 public:
-	int calculateMinimumHP(vector<vector<int>>& dungeon) {
-		int n = dungeon.size(), m = dungeon.front().size();
-		vector<vector<int>> res;
-		res.resize(n + 1);
-		for (auto it = res.begin(); it != res.end(); it++) it->resize(m + 1, 1e9);
-		res[n - 1][m - 1] = max(-dungeon[n - 1][m - 1], 0);
-		for (int i = n - 1; i >= 0; i--) {
-			for (int j = m - 1; j >= 0; j--) {
-				if (i == n - 1 && j == m - 1) continue;
-				res[i][j] = -dungeon[i][j] + min(res[i][j + 1], res[i + 1][j]);
-				res[i][j] = max(res[i][j], 0);
-			}
-		}
-		return res[0][0] + 1;
-	}
+    int calculateMinimumHP(vector<vector<int>>& dungeon) {
+        int n = dungeon.size(), m = dungeon.front().size();
+        vector<vector<int>> res;
+        res.resize(n + 1);
+        for (auto it = res.begin(); it != res.end(); it++) it->resize(m + 1, 1e9);
+        res[n - 1][m - 1] = max(-dungeon[n - 1][m - 1], 0);
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = m - 1; j >= 0; j--) {
+                if (i == n - 1 && j == m - 1) continue;
+                res[i][j] = -dungeon[i][j] + min(res[i][j + 1], res[i + 1][j]);
+                res[i][j] = max(res[i][j], 0);
+            }
+        }
+        return res[0][0] + 1;
+    }
 };
 ```
 
@@ -68,52 +68,51 @@ public:
 
 ```c++
 class Solution {
-	static string preprocess(const string& s) {
-		string res;
-		res.resize(s.size() * 2 + 1);
-		for (int i = 0; i < res.size(); i++) {
-			if (i % 2) res[i] = s[i / 2];
-			else res[i] = '#';
-		}
-		return res;
-	}
+    static string preprocess(const string& s) {
+        string res;
+        res.resize(s.size() * 2 + 1);
+        for (int i = 0; i < res.size(); i++) {
+            if (i % 2) res[i] = s[i / 2];
+            else res[i] = '#';
+        }
+        return res;
+    }
 
-	static int mirror(int pos, int middle) {
-		return 2 * middle - pos;
-	}
+    static int mirror(int pos, int middle) {
+        return 2 * middle - pos;
+    }
 
-	static int longestPrefixingPalidrome(const string& s) {
-		string ss = preprocess(s);
-		vector<int> rl = { 0 };
-		int maxRight = 0, pos = 0, ans = 0;
+    static int longestPrefixingPalidrome(const string& s) {
+        string ss = preprocess(s);
+        vector<int> rl = { 0 };
+        int maxRight = 0, pos = 0, ans = 0;
 
-		for (int i = 1; i < ss.length(); i++) {
-			int j;
-			if (i > maxRight) j = i;
-			else {
-				// i <= maxRight
-				int knownLen = rl[mirror(i, pos)];
-				j = min(i + knownLen, maxRight);
-			}
-			while (j < ss.length() && mirror(j, i) >= 0 && ss[j] == ss[mirror(j, i)]) j++;
-			j--;
-			rl.push_back(j - i);
-			if (j > maxRight) {
-				maxRight = j;
-				pos = i;
-			}
-			if (mirror(j, i) == 0) ans = max(ans, rl[i]);
-		}
+        for (int i = 1; i < ss.length(); i++) {
+            int j;
+            if (i > maxRight) j = i;
+            else {
+                // i <= maxRight
+                int knownLen = rl[mirror(i, pos)];
+                j = min(i + knownLen, maxRight);
+            }
+            while (j < ss.length() && mirror(j, i) >= 0 && ss[j] == ss[mirror(j, i)]) j++;
+            j--;
+            rl.push_back(j - i);
+            if (j > maxRight) {
+                maxRight = j;
+                pos = i;
+            }
+            if (mirror(j, i) == 0) ans = max(ans, rl[i]);
+        }
 
-		return ans;
-	}
+        return ans;
+    }
 public:
-	string shortestPalindrome(string s) {
-		int len = longestPrefixingPalidrome(s);
-		auto left = s.substr(len);
-		reverse(left.begin(), left.end());
-		return left + s;
-	}
+    string shortestPalindrome(string s) {
+        int len = longestPrefixingPalidrome(s);
+        auto left = s.substr(len);
+        reverse(left.begin(), left.end());
+        return left + s;
+    }
 };
 ```
-
