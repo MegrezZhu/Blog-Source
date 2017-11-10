@@ -10,6 +10,8 @@ tags:
 
 >  $A_{i,j}$比`A[i][j]`酷多了啊！
 
+<!-- more -->
+
 ---
 
 在查解决方案的时候发现很幸运地，现在我在用的主题[Next](theme-next.iissnan.com)其实已经集成了*MathJax*，只需要在`themes/next/_config.yml`里面把对应设置项打开就行了：
