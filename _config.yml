@@ -81,3 +81,10 @@ deploy:
   repo: git@github.com:MegrezZhu/MegrezZhu.github.io.git
   branch: master
   message: hexo-auto-deploy
+
+pandoc:
+  filters:
+  extra:
+  template:
+  meta:
+  mathEngine:
