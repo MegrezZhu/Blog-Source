@@ -1,6 +1,6 @@
 ---
 title: 对STINGY SAT问题属于NPC的简单证明
-date: 2018-01-21 21:26:15
+date: 2018-01-13 21:26:15
 tags:
 	- NP
 ---
